@@ -6,7 +6,8 @@ public class GridGenerator : MonoBehaviour
     public int gridSizeY = 3; // Sütun sayýsý
     public float gapSize = 0.2f; // Küpler arasýndaki boþluk
     public GameObject[] objectPrefabs; // Kullanýlacak rastgele obje prefablarý
-
+    public float x;
+    public float y;
     void Start()
     {
         GenerateGrid();
