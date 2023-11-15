@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 490463327069795982}
   - component: {fileID: 2389879257565823556}
   - component: {fileID: 4822591156033173452}
-  - component: {fileID: 4531843191654348137}
   m_Layer: 0
   m_Name: Gem_Yellow
   m_TagString: Yellow
@@ -98,15 +97,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.497228, y: 1.5119847, z: 1.497228}
   m_Center: {x: 0, y: -0.21877271, z: 0}
---- !u!114 &4531843191654348137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4191288804073972625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb53758a36a98314ca743a6eb18081bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

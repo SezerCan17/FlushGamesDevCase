@@ -61,11 +61,6 @@ public class GridCreator : MonoBehaviour
     {
         cubePosition = new Vector3(x * (cubeSize + gapSize), 0, y * (cubeSize + gapSize)) + gridOffset;
         GameObject cubeInstance = Instantiate(Cube,cubePosition, Quaternion.identity);
-        //GameObject cube = Cube;//GameObject.CreatePrimitive(PrimitiveType.Cube);
-        //Cube.transform.position = cubePosition;
-        //Cube.transform.localScale = new Vector3(cubeSize, cubeSize, cubeSize);
-        //cubeInstance.transform.SetParent(Cube.transform);
-        //CubebePosition = new Vector3(x * (cubeSize + gapSize), 0, y * (cubeSize + gapSize)) + gridOffset;
         SpawnGem.instance.Spawn_Gem();
 
     }
