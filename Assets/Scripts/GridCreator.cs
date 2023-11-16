@@ -8,6 +8,7 @@ public class GridCreator : MonoBehaviour
     public float gapSize = 0.1f; // Boþluk boyutu
     public Vector3 gridOffset = Vector3.zero; // Gridin konumu
     public Vector3 cubePosition;
+    public int area;
 
     private Transform cubesParent; // Küplerin ebeveyni
     public static GridCreator instance;
@@ -21,7 +22,7 @@ public class GridCreator : MonoBehaviour
     private void Start()
     {
         cubesParent = new GameObject("CubesParent").transform; // Küplerin ebeveynini oluþtur
-
+        area = gridSizeX * gridSizeY;
         GenerateGrid();
     }
 
