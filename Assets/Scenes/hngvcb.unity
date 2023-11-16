@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &33525540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 33525542}
+  - component: {fileID: 33525541}
+  m_Layer: 0
+  m_Name: Time_Counter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &33525541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33525540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c635c9e7bdc23754bbe8e4ad7e6e91a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &33525542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33525540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &306810214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -663,12 +707,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ecd56df25fc2ea4493bd16760504e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSizeX: 8
-  gridSizeY: 3
-  cubeSize: 1
+  gridSizeX: 4
+  gridSizeY: 4
+  cubeSize: 1.5
   gapSize: 0.5
   gridOffset: {x: 0, y: 0, z: 0}
   cubePosition: {x: 0, y: 0, z: 0}
+  area: 0
   Cube: {fileID: 3726044066205597516, guid: a1d4685ef5226284d9c8d5e6c5d38dbf, type: 3}
 --- !u!4 &720042051
 Transform:
@@ -701,6 +746,7 @@ MonoBehaviour:
   - {fileID: 6263674160652948396, guid: 15565c634044c4f42be3b971ff614d18, type: 3}
   - {fileID: 4094973196984527188, guid: 09d7d2a52d1ebec44a2b3cf52bd0384a, type: 3}
   - {fileID: 4191288804073972625, guid: caf81a3c1ed4c2e428dbdcdb18f4cf9a, type: 3}
+  ID: 
 --- !u!1 &1080865203
 GameObject:
   m_ObjectHideFlags: 0
