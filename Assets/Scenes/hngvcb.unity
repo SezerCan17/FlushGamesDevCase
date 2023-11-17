@@ -779,7 +779,7 @@ MonoBehaviour:
   gridSizeY: 5
   cubeSize: 1.5
   gapSize: 0.5
-  gridOffset: {x: 0, y: -0.3, z: 0}
+  gridOffset: {x: -10.31, y: 0, z: -3}
   cubePosition: {x: 0, y: 0, z: 0}
   area: 0
   Cube: {fileID: 3726044066205597516, guid: a1d4685ef5226284d9c8d5e6c5d38dbf, type: 3}
