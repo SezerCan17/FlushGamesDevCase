@@ -11,34 +11,17 @@ public class Gold_Calculate : MonoBehaviour
     {
        instance = this;
     }
-
-    public void GoldCalculate(int idx)
+    private void Start()
     {
-        //price += (GemInformation.instance.gem_First_Price[idx] + x * 100);
+        price = PlayerPrefs.GetFloat("price");
     }
 
-    public void Green_Gold_Calculate(float x)
+    public void GoldCalculate(int idx, Vector3 scaleValue)
     {
-
-        Debug.Log("Green Toplandý");
-        price += (GemInformation.instance.gem_First_Price[0]+x*100);
-        Debug.Log(Gem_Interaction.Instance.scaleValue +"bu");
-        Debug.Log(price);
-        UI_Manager.instance.Gold_Text(price);
-
-    }
-    public void Pink_Gold_Calculate(float x)
-    {
-        Debug.Log("Pink Toplandý");
-        price += (GemInformation.instance.gem_First_Price[1] + x * 100);
-        Debug.Log(price);
+        float x = scaleValue.x;
+        price += (GemInformation.instance.gem_First_Price[idx] + x * 100);
+        PlayerPrefs.SetFloat("price", price);
         UI_Manager.instance.Gold_Text(price);
     }
-    public void Yellow_Gold_Calculate(float x)
-    {
-        Debug.Log("Yellow Toplandý");
-        price += (GemInformation.instance.gem_First_Price[2] + x * 100);
-        Debug.Log(price);
-        UI_Manager.instance.Gold_Text(price);
-    }
+
 }
