@@ -1436,6 +1436,7 @@ MonoBehaviour:
   yOffset: 1
   player: {fileID: 1281285078}
   gemCount: 0
+  Sales_Area: {fileID: 1172630000}
 --- !u!4 &1904805373
 Transform:
   m_ObjectHideFlags: 0

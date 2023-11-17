@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Deneme : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class Deneme : MonoBehaviour
         {
             AddCube();
         }
-        else if (Input.GetMouseButtonDown(1) && cubes.Count > 0) // Sað týklama
+        else if (Input.GetKeyDown(KeyCode.Space) && cubes.Count > 0) // Sað týklama
         {
+
             RemoveLastCube();
         }
     }
@@ -33,7 +35,10 @@ public class Deneme : MonoBehaviour
     void RemoveLastCube()
     {
         GameObject lastCube = cubes[cubes.Count - 1];
+        
+        lastCube.transform.DOMoveX(lastCube.transform.position.x + 3f, 1f)
+                .OnComplete(() => Destroy(lastCube));
         cubes.Remove(lastCube);
-        Destroy(lastCube);
+        //Destroy(lastCube);
     }
 }

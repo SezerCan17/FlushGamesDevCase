@@ -1,8 +1,10 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using DG.Tweening;
 
 public class Stack_Back : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class Stack_Back : MonoBehaviour
     public float yOffset = 1.0f;
     public GameObject player;
     public int gemCount;
+    public GameObject Sales_Area;
     Vector3 targetPosition;
     
 
@@ -43,10 +46,13 @@ public class Stack_Back : MonoBehaviour
     public void stack_remove()
     {
         GameObject lastGem = stackObjects[stackObjects.Count-1];
+        Tween moveTween = transform.DOMove(Sales_Area.transform.localScale, 1f);
         Debug.Log(lastGem.transform.localScale + "  sonuncunun scale i");
         Debug.Log(lastGem.tag+ "   Sonuncunun tag i");
+        lastGem.transform.DOMoveX(lastGem.transform.position.x + 3f, 1f)
+            .OnComplete(() => Destroy(lastGem));
         stackObjects.Remove(lastGem);
-        Destroy(lastGem);
+        //Destroy(lastGem);
         //gemCount = stackObjects.Count;
       
     }
