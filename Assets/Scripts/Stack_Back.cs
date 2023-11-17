@@ -15,7 +15,7 @@ public class Stack_Back : MonoBehaviour
     public GameObject player;
     public int gemCount;
     public GameObject Sales_Area;
-    Vector3 targetPosition;
+    
     
 
     private void Awake()
@@ -38,7 +38,6 @@ public class Stack_Back : MonoBehaviour
     {
         GameObject stackObject = Instantiate(obje, obje.transform.position, Quaternion.identity);
         Debug.Log(stackObject.name+"ismi bu iþte");
-        //gemCount = stackObjects.Count;
         stackObjects.Add(stackObject);
         Stack_Gems(stackObject);
         Destroy(obje);
@@ -46,14 +45,12 @@ public class Stack_Back : MonoBehaviour
     public void stack_remove()
     {
         GameObject lastGem = stackObjects[stackObjects.Count-1];
-        Tween moveTween = transform.DOMove(Sales_Area.transform.localScale, 1f);
-        Debug.Log(lastGem.transform.localScale + "  sonuncunun scale i");
-        Debug.Log(lastGem.tag+ "   Sonuncunun tag i");
-        lastGem.transform.DOMoveX(lastGem.transform.position.x + 3f, 1f)
+        Vector3 targetPositionDown = new Vector3(lastGem.transform.position.x + 3f, lastGem.transform.position.y - 3f, lastGem.transform.position.z);
+        lastGem.transform.DOMove(targetPositionDown, 1f)
+            .SetEase(Ease.InQuad)  
             .OnComplete(() => Destroy(lastGem));
         stackObjects.Remove(lastGem);
-        //Destroy(lastGem);
-        //gemCount = stackObjects.Count;
+        
       
     }
     
@@ -68,11 +65,11 @@ public class Stack_Back : MonoBehaviour
     }
     private void UpdateStackPosition()
     {
-        //gemCount = stackObjects.Count;
+        
         for (int i = 0; i < gemCount; i++)
         {
             stackObjects[i].transform.position = new Vector3(stack.transform.position.x, stackObjects[i].transform.position.y,stack.transform.position.z);
-            //transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5f);
+            
         }
     }
 
