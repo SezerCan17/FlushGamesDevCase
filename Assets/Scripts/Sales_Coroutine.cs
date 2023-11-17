@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move_Stack : MonoBehaviour
+public class Sales_Coroutine : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -11,8 +11,8 @@ public class Move_Stack : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    void Update()
     {
-        //Stack_Back.instance.Stack_Gems();
+        
     }
 }

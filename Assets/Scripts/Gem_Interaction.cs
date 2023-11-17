@@ -57,5 +57,11 @@ public class Gem_Interaction : MonoBehaviour
             continueScaling = false;
             //Destroy(collision.gameObject);
         }
+
+        if(collision.CompareTag("Sales_Area"))
+        {
+            Debug.Log("Satýþ alanýnda");
+            Sales_Area.instance.sales_Gem();
+        }
     }
 }

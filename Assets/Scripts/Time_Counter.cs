@@ -28,8 +28,18 @@ public class Time_Counter : MonoBehaviour
             Debug.Log("saydý2");
             
         }
-            
-        
-       
+    }
+   public IEnumerator SalesCoroutine()
+    {
+        yield return new WaitForSeconds(3.0f);
+        int gemCount = Stack_Back.instance.gemCount;
+
+        // Remove gems from the stack with a 3-second interval, starting from the last added
+        while (gemCount > 1)
+        {
+            Stack_Back.instance.stack_remove();
+            yield return new WaitForSeconds(3.0f);
+            gemCount = Stack_Back.instance.gemCount; // Update gem count after removal
+        }
     }
 }
