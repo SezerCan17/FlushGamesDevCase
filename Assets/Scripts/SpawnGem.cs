@@ -31,7 +31,6 @@ public class SpawnGem : MonoBehaviour
     }
     public void Spawn_Gem_Again(Vector3 pos)
     {
-        
         int randomIndex = Random.Range(0, gems.Length);
         GameObject gemInstance = Instantiate(gems[randomIndex], pos, Quaternion.identity);
         gemInstance.transform.localScale = new Vector3(0f, 0f, 0f);

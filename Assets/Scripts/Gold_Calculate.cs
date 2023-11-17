@@ -14,6 +14,7 @@ public class Gold_Calculate : MonoBehaviour
 
     public void Green_Gold_Calculate(float x)
     {
+
         Debug.Log("Green Toplandý");
         price += (GemInformation.instance.gem_First_Price[0]+x*100);
         Debug.Log(Gem_Interaction.Instance.scaleValue +"bu");
