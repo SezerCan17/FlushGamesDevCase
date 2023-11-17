@@ -8,6 +8,7 @@ TagManager:
   - Pink
   - Yellow
   - Sales_Area
+  - Sales_Area2
   layers:
   - Default
   - TransparentFX

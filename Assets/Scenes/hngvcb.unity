@@ -710,7 +710,7 @@ MonoBehaviour:
   gridSizeX: 4
   gridSizeY: 4
   cubeSize: 1.5
-  gapSize: 0.5
+  gapSize: 3
   gridOffset: {x: 0, y: -0.3, z: 0}
   cubePosition: {x: 0, y: 0, z: 0}
   area: 0
@@ -742,11 +742,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b24aa1b63edfe547a0e95d6600c8adb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gems:
-  - {fileID: 6263674160652948396, guid: 15565c634044c4f42be3b971ff614d18, type: 3}
-  - {fileID: 4094973196984527188, guid: 09d7d2a52d1ebec44a2b3cf52bd0384a, type: 3}
-  - {fileID: 4191288804073972625, guid: caf81a3c1ed4c2e428dbdcdb18f4cf9a, type: 3}
   ID: 
+--- !u!1 &842209436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 842209438}
+  - component: {fileID: 842209437}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Sales_Area2
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!65 &842209437
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842209436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 25.553064, y: 31.62693, z: 57.68304}
+  m_Center: {x: -2.4095278, y: -15.313461, z: -28.34152}
+--- !u!4 &842209438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842209436}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.32499, y: 16.535183, z: 27.132526}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1080865203
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,7 +797,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1080865205}
-  - component: {fileID: 1080865204}
   m_Layer: 0
   m_Name: Gem_Interaction
   m_TagString: Untagged
@@ -764,21 +804,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1080865204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080865203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb53758a36a98314ca743a6eb18081bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scaleValue: {x: 1, y: 0, z: 0}
-  Gem_position: {x: 0, y: 0, z: 0}
-  continueScaling: 1
 --- !u!4 &1080865205
 Transform:
   m_ObjectHideFlags: 0
@@ -1072,7 +1097,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleValue: {x: 0, y: 0, z: 0}
   Gem_position: {x: 0, y: 0, z: 0}
-  continueScaling: 1
 --- !u!1 &1526924996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1440,7 +1464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61a5f9e1dd157054da792744184636b1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.23
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61a5f9e1dd157054da792744184636b1, type: 3}
       propertyPath: m_LocalPosition.y
