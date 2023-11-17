@@ -8,7 +8,30 @@ public class GemInformation : MonoBehaviour
     public string[] gemName;
     public float[] gem_First_Price;
     [SerializeField] private Sprite[] icon;
-    [SerializeField] private GameObject[] gem_Model;
+    public GameObject[] gem_Model;
+
+    public GemInformation(string[] names, float[] prices, Sprite[] icons, GameObject[] models)
+    {
+        gemName = names;
+        gem_First_Price = prices;
+        icon = icons;
+        gem_Model = models;
+    }
+
+
+    public int FindIndexOfGem(string gemNameToFind)
+    {
+        for (int i = 0; i < gemName.Length; i++)
+        {
+            if (gemName[i] == gemNameToFind)
+            {
+                return i; // Eþleþen ismi bulduk, indeksi döndür
+            }
+        }
+
+        // Eðer eþleþen bir isim bulunamadýysa -1 döndür
+        return -1;
+    }
 
     private void Awake()
     {

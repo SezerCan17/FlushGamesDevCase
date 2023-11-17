@@ -12,6 +12,11 @@ public class Gold_Calculate : MonoBehaviour
        instance = this;
     }
 
+    public void GoldCalculate(int idx)
+    {
+        //price += (GemInformation.instance.gem_First_Price[idx] + x * 100);
+    }
+
     public void Green_Gold_Calculate(float x)
     {
 
