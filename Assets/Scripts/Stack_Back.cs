@@ -5,26 +5,48 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class Stack_Back : MonoBehaviour
 {
     public static Stack_Back instance;
-    public List<GameObject> stackObjects = new List<GameObject>();
-    public GameObject stack;
-    public float yOffset = 1.0f;
-    public GameObject player;
+    [SerializeField] protected List<GameObject> stackObjects = new List<GameObject>();
+    [SerializeField] private float yOffset = 1.0f;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject Gems;
+
     public int gemCount;
-    //public GameObject Sales_Area;
-    
-    
+    public GameObject stack;
+
+    public static Stack_Back Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<Stack_Back>();
+
+                if (instance == null)
+                {
+                    GameObject singletonObject = new GameObject("GemStackSingleton");
+                    instance = singletonObject.AddComponent<Stack_Back>();
+                }
+            }
+
+            return instance;
+        }
+    }
+
 
     private void Awake()
     {
         instance = this;
+        
     }
     private void Start()
     {
         stackObjects.Add(stack);
+        DoTweenManager doTweenManager = DoTweenManager.Instance;
     }
 
     private void FixedUpdate()
@@ -34,23 +56,28 @@ public class Stack_Back : MonoBehaviour
         UpdateStackPosition();
     }
 
+    
+
     public void stack_push(GameObject obje)
     {
         GameObject stackObject = Instantiate(obje, obje.transform.position, Quaternion.identity);
         stackObjects.Add(stackObject);
+        stackObject.transform.SetParent(Gems.transform);
         Stack_Gems(stackObject);
         Destroy(obje);
     }
     public void stack_remove()
     {
         GameObject lastGem = stackObjects[stackObjects.Count-1];
+
         Vector3 scaleValue = lastGem.transform.localScale;
         string name = lastGem.tag;
+
         Sales_Area.instance.CollectData(name,scaleValue);
-        Vector3 targetPositionDown = new Vector3(lastGem.transform.position.x + 3f, lastGem.transform.position.y - 3f, lastGem.transform.position.z);
-        lastGem.transform.DOMove(targetPositionDown, 1f)
-            .SetEase(Ease.InQuad)  
-            .OnComplete(() => Destroy(lastGem));
+        DoTweenManager.instance.GemSales_DoMove(lastGem);
+        
+        
+
         stackObjects.Remove(lastGem);
         gemCount = stackObjects.Count;
 
@@ -61,7 +88,7 @@ public class Stack_Back : MonoBehaviour
     public void Stack_Gems(GameObject obje)
     {
         Vector3 lastGemPos = stackObjects[stackObjects.Count - 2].transform.position;
-        obje.transform.position = new Vector3(lastGemPos.x, lastGemPos.y + 1.0f, lastGemPos.z);
+        obje.transform.position = new Vector3(lastGemPos.x, lastGemPos.y + yOffset, lastGemPos.z);
         gemCount = stackObjects.Count;
        
     }

@@ -8,19 +8,38 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private FixedJoystick _joystick;
     [SerializeField] private Animator _animator;
-
     [SerializeField] private float _moveSpeed;
 
+    
     private void FixedUpdate()
     {
-        _rigidbody.velocity = new Vector3(_joystick.Horizontal * _moveSpeed, _rigidbody.velocity.y, _joystick.Vertical * _moveSpeed);
+        HandleMovement();
+        HandleAnimation();
+    }
 
-        if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
+    private void HandleMovement()
+    {
+        Vector3 movement = new Vector3(_joystick.Horizontal * _moveSpeed*-1, _rigidbody.velocity.y*-1, _joystick.Vertical * _moveSpeed*-1);
+        _rigidbody.velocity = movement;
+
+        if (HasMovementInput())
         {
-            transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
-            _animator.SetBool("Run", true);
+            RotateCharacter();
         }
-        else
-            _animator.SetBool("Run", false);
+    }
+
+    private void HandleAnimation()
+    {
+        _animator.SetBool("Run", HasMovementInput());
+    }
+
+    private bool HasMovementInput()
+    {
+        return _joystick.Horizontal != 0 || _joystick.Vertical != 0;
+    }
+
+    private void RotateCharacter()
+    {
+        transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
     }
 }

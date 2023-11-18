@@ -8,11 +8,11 @@ public class UI_Manager : MonoBehaviour
 {
     public static UI_Manager instance;
     [SerializeField] TMP_Text text;
-    public GameObject Pop_up;
-    public GameObject Cancel_Button;
-    public TMP_Text textG;
-    public TMP_Text textP;
-    public TMP_Text textY;
+    [SerializeField] GameObject Pop_up;
+    [SerializeField] GameObject Cancel_Button;
+    [SerializeField] TMP_Text textG;
+    [SerializeField] TMP_Text textP;
+    [SerializeField] TMP_Text textY;
     private void Awake()
     {
         instance = this;

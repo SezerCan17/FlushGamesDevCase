@@ -2,17 +2,19 @@ using UnityEngine;
 
 public class GridCreator : MonoBehaviour
 {
-    public int gridSizeX = 4; // Default deðerler
-    public int gridSizeY = 4;
-    public float cubeSize = 1.0f;
-    public float gapSize = 0.1f; // Boþluk boyutu
-    public Vector3 gridOffset = Vector3.zero; // Gridin konumu
-    public Vector3 cubePosition;
-    public int area;
-
-    private Transform cubesParent; // Küplerin ebeveyni
     public static GridCreator instance;
-    public GameObject Cube;
+
+    [SerializeField] private int gridSizeX = 4; // Default deðerler
+    [SerializeField] private int gridSizeY = 4;
+    [SerializeField] private float cubeSize = 1.0f;
+    [SerializeField] private float gapSize = 0.1f; // Boþluk boyutu
+     private int area;
+    [SerializeField] private Vector3 gridOffset = Vector3.zero; // Gridin konumu
+    [SerializeField] private GameObject Cube;
+    [SerializeField] private GameObject grids;
+
+    public Vector3 cubePosition;
+    private Transform cubesParent;// Küplerin ebeveyni
 
 
     private void Awake()
@@ -62,7 +64,8 @@ public class GridCreator : MonoBehaviour
     {
         cubePosition = new Vector3(x * (cubeSize + gapSize), 0, y * (cubeSize + gapSize)) + gridOffset;
         GameObject cubeInstance = Instantiate(Cube,cubePosition, Quaternion.identity);
+        
         SpawnGem.instance.Spawn_Gem();
-
+        cubeInstance.transform.SetParent(grids.transform);
     }
 }

@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class Time_Counter : MonoBehaviour
 {
     public static Time_Counter instance;
+    [SerializeField] private float _salesTime;
+
     private void Awake()
     {
         instance = this;
@@ -35,9 +38,10 @@ public class Time_Counter : MonoBehaviour
         
         for(int i = Stack_Back.instance.gemCount; i >1; i--) 
         {
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(_salesTime);
             
             Stack_Back.instance.stack_remove();
+
         }
     }
 }
