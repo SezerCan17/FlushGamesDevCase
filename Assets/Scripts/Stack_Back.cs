@@ -52,8 +52,9 @@ public class Stack_Back : MonoBehaviour
             .SetEase(Ease.InQuad)  
             .OnComplete(() => Destroy(lastGem));
         stackObjects.Remove(lastGem);
-       
-        
+        gemCount = stackObjects.Count;
+
+
     }
     
 

@@ -14,6 +14,7 @@ public class Gold_Calculate : MonoBehaviour
     private void Start()
     {
         price = PlayerPrefs.GetFloat("price");
+        UI_Manager.instance.Gold_Text(price);
     }
 
     public void GoldCalculate(int idx, Vector3 scaleValue)

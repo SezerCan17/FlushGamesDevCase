@@ -5,9 +5,9 @@ using UnityEngine;
 public class Sales_Area : MonoBehaviour
 {
     public static Sales_Area instance;
-    private int greenC = 0;
-    private int pinkC = 0;
-    private int yellowC = 0;
+    private int greenC;
+    private int pinkC;
+    private int yellowC;
 
 
     private void Awake()
@@ -29,6 +29,7 @@ public class Sales_Area : MonoBehaviour
     {
 
         int idx = GemInformation.instance.FindIndexOfGem(name);
+        Collected_Count(name);
         sales_Gem(idx, scaleValue);
 
     }
@@ -39,20 +40,24 @@ public class Sales_Area : MonoBehaviour
         {
             case "Green":
                 greenC++;
+                Debug.Log(greenC);
+                UI_Manager.instance.Pop_up_CollectedGreen(greenC);
                 break;
 
             case "Pink":
                 pinkC++;
+                Debug.Log(pinkC);
+                UI_Manager.instance.Pop_up_CollectedPink(pinkC);
                 break;
 
             case "Yellow":
                 yellowC++;
+                Debug.Log(yellowC);
+                UI_Manager.instance.Pop_up_CollectedYellow(yellowC);
                 break;
 
         }
-        PlayerPrefs.SetInt("greenC", greenC);
-        PlayerPrefs.SetInt("pinkC", pinkC);
-        PlayerPrefs.SetInt("yellowC", yellowC);
+        
     }
 
 
