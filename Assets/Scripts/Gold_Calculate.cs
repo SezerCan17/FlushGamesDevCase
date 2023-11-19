@@ -6,7 +6,6 @@ public class Gold_Calculate : MonoBehaviour
 {
     public static Gold_Calculate instance;
     private float price;
-    //private Vector3 scaleX;
     private void Awake()
     {
        instance = this;

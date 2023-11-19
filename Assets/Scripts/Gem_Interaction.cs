@@ -6,8 +6,6 @@ using UnityEngine;
 public class Gem_Interaction : MonoBehaviour
 {
     public static Gem_Interaction Instance;
-    //public Vector3 scaleValue;
-    //public Vector3 Gem_position;
 
     public Vector3 scaleValue { get; private set; }
     public Vector3 Gem_position { get; private set; }

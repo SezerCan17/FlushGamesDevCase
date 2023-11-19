@@ -37,7 +37,6 @@ public class Stack_Back : MonoBehaviour
         }
     }
 
-
     private void Awake()
     {
         instance = this;
@@ -80,11 +79,8 @@ public class Stack_Back : MonoBehaviour
 
         stackObjects.Remove(lastGem);
         gemCount = stackObjects.Count;
-
-
     }
     
-
     public void Stack_Gems(GameObject obje)
     {
         Vector3 lastGemPos = stackObjects[stackObjects.Count - 2].transform.position;

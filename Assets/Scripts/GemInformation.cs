@@ -25,11 +25,9 @@ public class GemInformation : MonoBehaviour
         {
             if (gemName[i] == gemNameToFind)
             {
-                return i; // Eþleþen ismi bulduk, indeksi döndür
+                return i; 
             }
         }
-
-        // Eðer eþleþen bir isim bulunamadýysa -1 döndür
         return -1;
     }
 

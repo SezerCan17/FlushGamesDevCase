@@ -4,17 +4,17 @@ public class GridCreator : MonoBehaviour
 {
     public static GridCreator instance;
 
-    [SerializeField] private int gridSizeX = 4; // Default deðerler
+    [SerializeField] private int gridSizeX = 4; 
     [SerializeField] private int gridSizeY = 4;
     [SerializeField] private float cubeSize = 1.0f;
-    [SerializeField] private float gapSize = 0.1f; // Boþluk boyutu
+    [SerializeField] private float gapSize = 0.1f; 
      private int area;
-    [SerializeField] private Vector3 gridOffset = Vector3.zero; // Gridin konumu
+    [SerializeField] private Vector3 gridOffset = Vector3.zero; 
     [SerializeField] private GameObject Cube;
     [SerializeField] private GameObject grids;
 
     public Vector3 cubePosition;
-    private Transform cubesParent;// Küplerin ebeveyni
+    private Transform cubesParent;
 
 
     private void Awake()
@@ -23,15 +23,13 @@ public class GridCreator : MonoBehaviour
     }
     private void Start()
     {
-        cubesParent = new GameObject("CubesParent").transform; // Küplerin ebeveynini oluþtur
+        cubesParent = new GameObject("CubesParent").transform;
         area = gridSizeX * gridSizeY;
         GenerateGrid();
     }
 
-    // Editor'de deðiþiklik yapýldýðýnda çaðrýlýr
     private void OnValidate()
     {
-        // Grid boyutlarýný minimum 1 olarak sýnýrla
         gridSizeX = Mathf.Max(1, gridSizeX);
         gridSizeY = Mathf.Max(1, gridSizeY);
 
